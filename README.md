@@ -1,8 +1,9 @@
-# Restful API with MongoDB : User Authentication & Authentication JWT (Json Web Token)
+# Restful API with MongoDB : User Authentication + CRUD & Authentication JWT (Json Web Token)
 
 ## Technology Used
 
 -   `bcryptjs: ^2.4.3`
+-   `cors: ^2.8.5`
 -   `dotenv: ^10.0.0`
 -   `express: ^4.17.1`
 -   `joi: ^17.4.2`
@@ -56,6 +57,7 @@ Request :
 
     ```json
     {
+        "code": "number",
         "message": "string"
     }
     ```
@@ -89,6 +91,7 @@ Request :
 
     ```json
     {
+        "code": "number",
         "message": "string",
         "user": {
             "_id": "string",
@@ -125,6 +128,7 @@ Request :
 
     ```json
     {
+        "code": "number",
         "message": "string",
         "user": {
             "_id": "string",
@@ -154,6 +158,7 @@ Request :
 
     ```json
     {
+        "code": "number",
         "message": "string"
     }
     ```
@@ -180,6 +185,7 @@ Request :
 
     ```json
     {
+        "code": "number",
         "message": "string",
         "user": [
             {
@@ -225,6 +231,7 @@ Request :
 
     ```json
     {
+        "code": "number",
         "message": "string",
         "user": {
             "_id": "string",
@@ -267,6 +274,7 @@ Request :
 
     ```json
     {
+        "code": "number",
         "message": "string"
     }
     ```
@@ -293,6 +301,7 @@ Request :
 
     ```json
     {
+        "code": "number",
         "message": "string"
     }
     ```

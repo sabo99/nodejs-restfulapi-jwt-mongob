@@ -4,18 +4,18 @@ const Joi = require('joi');
 
 checkUsernameOrEmailExists = (req, res, next) => {
     User.findOne({ username: req.body.username }).exec((err, user) => {
-        if (err) return res.status(500).send({ messaage: err });
+        if (err) return res.status(500).send({ code: 500, messaage: err });
         if (user)
             return res
                 .status(400)
-                .send({ messaage: 'Username is already exists!' });
+                .send({ code: 400, messaage: 'Username is already exists!' });
 
         User.findOne({ email: req.body.email }).exec((err, user) => {
-            if (err) return res.status(500).send({ messaage: err });
+            if (err) return res.status(500).send({ code: 500, messaage: err });
             if (user)
                 return res
                     .status(400)
-                    .send({ messaage: 'Email is already exists!' });
+                    .send({ code: 400, messaage: 'Email is already exists!' });
 
             next();
         });
@@ -30,7 +30,9 @@ signUpValidation = (req, res, next) => {
     }).validate(req.body);
 
     if (error)
-        return res.status(422).send({ message: error.details[0].message });
+        return res
+            .status(422)
+            .send({ code: 422, message: error.details[0].message });
 
     next();
 };
@@ -42,7 +44,9 @@ signInValidation = (req, res, next) => {
     }).validate(req.body);
 
     if (error)
-        return res.status(422).send({ message: error.details[0].message });
+        return res
+            .status(422)
+            .send({ code: 422, message: error.details[0].message });
 
     next();
 };
@@ -53,7 +57,9 @@ findWithQueryId = (req, res, next) => {
     }).validate(req.query);
 
     if (error)
-        return res.status(422).send({ message: error.details[0].message });
+        return res
+            .status(422)
+            .send({ code: 422, message: error.details[0].message });
 
     next();
 };
@@ -64,7 +70,9 @@ findWithParamsId = (req, res, next) => {
     }).validate(req.params);
 
     if (error)
-        return res.status(422).send({ message: error.details[0].message });
+        return res
+            .status(422)
+            .send({ code: 422, message: error.details[0].message });
 
     next();
 };
@@ -72,12 +80,16 @@ findWithParamsId = (req, res, next) => {
 checkValueUpated = (req, res, next) => {
     User.findById(req.params.id).exec(async (err, user) => {
         if (!user)
-            return res.status(404).send({ message: 'User id Not Found!' });
+            return res
+                .status(404)
+                .send({ code: 404, message: 'User id Not Found!' });
 
         if (!Object.keys(req.body).length)
-            return res.status(422).send({ message: 'Undefine Request Body!' });
+            return res
+                .status(422)
+                .send({ code: 422, message: 'Undefine Request Body!' });
 
-        if (err) return res.status(500).send({ message: err });
+        if (err) return res.status(500).send({ code: 500, message: err });
 
         if (user) {
             req.body.email =
@@ -104,7 +116,7 @@ checkValueUpated = (req, res, next) => {
             if (error)
                 return res
                     .status(422)
-                    .send({ message: error.details[0].message });
+                    .send({ code: 422, message: error.details[0].message });
 
             next();
         }
