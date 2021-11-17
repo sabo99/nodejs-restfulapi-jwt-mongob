@@ -17,10 +17,10 @@
 
 | Methods     | Urls                  |           Actions           |   Token    |
 | :---------- | :-------------------- | :-------------------------: | :--------: |
-| GET         | /                     |    Retrieve Base on APIs    |    None    |
-| POST        | /api/auth/signup      |     SignUp new Account      |    None    |
-| POST        | /api/auth/signin      |      Login an Account       |    None    |
-| GET         | /api/user/public      |   Retrieve Public Content   |    None    |
+| GET         | /                     |    Retrieve Base on APIs    |     -      |
+| POST        | /api/auth/signup      |     SignUp new Account      |     -      |
+| POST        | /api/auth/signin      |      Login an Account       |     -      |
+| GET         | /api/user/public      |   Retrieve Public Content   |     -      |
 | GET         | /api/user/list        | Retrieve Users List Content | `Required` |
 | GET         | /api/user/find        |    Retrieve User Content    | `Required` |
 | PUT / PATCH | /api/user/{id}/update |     Update User Content     | `Required` |
@@ -167,7 +167,7 @@ Request :
 
 ## `User List`
 
-> Require `token`
+#### `Require token`
 
 Request :
 
@@ -208,8 +208,9 @@ Request :
 
 ## `Find User`
 
-> Require `token` <br>
-> example: `/api/user/find?id=1`
+#### `Require token`
+
+#### example: `/api/user/find?id=1`
 
 Request :
 
@@ -246,7 +247,7 @@ Request :
 
 ## `Update User`
 
-> Require `token`
+#### `Require token`
 
 Request :
 
@@ -283,7 +284,7 @@ Request :
 
 ## `Delete User`
 
-> Require `token`
+#### `Require token`
 
 Request :
 
