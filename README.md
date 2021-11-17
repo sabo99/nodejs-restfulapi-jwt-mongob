@@ -13,6 +13,12 @@
 
 <br>
 
+## Project Structure
+
+<img src="./Project Structure.png">
+
+<br>
+
 ## APIs Provided
 
 | Methods     | Urls                  |           Actions           |   Token    |
