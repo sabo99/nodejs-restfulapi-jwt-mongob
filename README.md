@@ -144,12 +144,7 @@ Request :
             "createdAt": "date-string"
         },
         "device-info": {
-            "client": {
-                "type": "string",
-                "name": "string",
-                "version": "string",
-                "url": "string"
-            },
+            "client": "object",
             "os": "object",
             "device": "object",
             "bot": "object"
