@@ -58,6 +58,7 @@ signIn = (req, res) => {
                     email: user.email,
                     token: token,
                 },
+                'device-info': req.deviceInfo,
             });
     });
 };

@@ -1,8 +1,9 @@
-# Restful API with MongoDB : User Authentication + CRUD & Authentication JWT (Json Web Token)
+# Restful API with MongoDB : User Authentication + CRUD, Authentication JWT (Json Web Token) & Device Detector User Login
 
 ## Technology Used
 
 -   `bcryptjs: ^2.4.3`
+-   `device-detector-js: ^3.0.0`
 -   `cors: ^2.8.5`
 -   `dotenv: ^10.0.0`
 -   `express: ^4.17.1`
@@ -141,6 +142,17 @@ Request :
             "email": "string",
             "username": "string",
             "createdAt": "date-string"
+        },
+        "device-info": {
+            "client": {
+                "type": "string",
+                "name": "string",
+                "version": "string",
+                "url": "string"
+            },
+            "os": "string",
+            "device": "string",
+            "bot": "string"
         }
     }
     ```

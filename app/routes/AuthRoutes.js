@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Validations } = require('../middlewares');
+const { Validations, DeviceDetector } = require('../middlewares');
 const AuthController = require('../controllers/AuthController');
 
 router.post(
@@ -8,6 +8,10 @@ router.post(
     AuthController.signUp,
 );
 
-router.post('/signin', [Validations.signInValidation], AuthController.signIn);
+router.post(
+    '/signin',
+    [Validations.signInValidation, DeviceDetector.index],
+    AuthController.signIn,
+);
 
 module.exports = router;
