@@ -150,9 +150,9 @@ Request :
                 "version": "string",
                 "url": "string"
             },
-            "os": "string",
-            "device": "string",
-            "bot": "string"
+            "os": "object",
+            "device": "object",
+            "bot": "object"
         }
     }
     ```
